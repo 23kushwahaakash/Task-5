@@ -22,11 +22,12 @@ function ForgotForm() {
             </div>
           </form>
           <button 
-            type="submit" 
-            className="bg-[#15294B] mb-20 mt-8 hover:shadow-[0_4px_20px_#60A5FA] transition-shadow duration-300 w-[70%] px-25 py-5 rounded-md text-white text-2xl" 
-            onClick={() => navigate('/forgotpassword/verifyotp')} 
+           type="submit" 
+           onClick={() => navigate('/forgotpassword/verifyotp')}
+           className="relative overflow-hidden bg-[#15294B] px-30 py-5 mb-3 rounded-md text-white text-2xl transition-colors duration-300 hover:text-[#15294B] group"
           >
-            Send OTP
+          <span className="relative z-10">Send OTP</span>
+          <span className="absolute inset-0 bg-gray-300 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
           </button>
           <a href="/" className="hover:underline mb-10 text-blue-500">Back to Login</a>
         </div>

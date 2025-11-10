@@ -91,7 +91,13 @@ const handleVerify = () => {
               ))}
               </div>
           </form>
-          <button type="submit" className="bg-[#15294B] mb-5 mt-8 hover:shadow-[0_4px_20px_#60A5FA] transition-shadow duration-300 w-[70%] px-25 py-5 rounded-md text-white text-2xl">Verify OTP</button>
+          <button 
+           type="submit" 
+           className="relative overflow-hidden bg-[#15294B] px-30 py-5 mb-3 rounded-md text-white text-2xl transition-colors duration-300 hover:text-[#15294B] group"
+          >
+          <span className="relative z-10">Verify OTP</span>
+          <span className="absolute inset-0 bg-gray-300 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          </button>
           <h1>Didn't receive the code?<a href="/forgotpassword" className="hover:underline mb-10 text-blue-500">Resend OTP</a></h1>
         </div>
     </div>

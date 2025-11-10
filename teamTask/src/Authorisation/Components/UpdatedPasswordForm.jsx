@@ -17,10 +17,13 @@ function UpdatedPasswordForm() {
             <h1>Congratulations! Your password is updated</h1>
             <h1 className="mb-20">successfully. Click continue to login</h1>
             <button 
-            type="submit" 
-            className="bg-[#15294B] hover:shadow-[0_4px_20px_#60A5FA] transition-shadow duration-300 px-30 py-5 mb-3 rounded-md text-white text-2xl"
-            onClick={handleResetPassword}
-            >Continue</button>
+           type="submit" 
+           onClick={handleResetPassword}
+           className="relative overflow-hidden bg-[#15294B] px-30 py-5 mb-3 rounded-md text-white text-2xl transition-colors duration-300 hover:text-[#15294B] group"
+          >
+          <span className="relative z-10">Continue</span>
+          <span className="absolute inset-0 bg-gray-300 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+          </button>
         </div>
     </div>
   )

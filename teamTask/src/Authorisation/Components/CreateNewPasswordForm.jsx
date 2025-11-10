@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function CreateNewPasswordForm() {
     const [showPassword, setShowPassword] = useState(false);
     const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-    const [password, setPassword] = useState("");  // ← Add this
+    const [password, setPassword] = useState("");  
     const [confirmPassword, setConfirmPassword] = useState("");  // ← Add this
 
     const togglePasswordVisibility = () => setShowPassword(!showPassword);
@@ -82,12 +82,13 @@ function CreateNewPasswordForm() {
                     </div>
 
                 </div>
-                <button
-                    type="submit"
-                    onClick={handleResetPassword}
-                    className="bg-[#15294B] hover:shadow-[0_4px_20px_#60A5FA] transition-shadow duration-300 w-[70%] py-4 mt-8 mb-3 rounded-md text-white text-xl"
+                <button 
+                 type="submit" 
+                 onClick={handleResetPassword}
+                 className="relative overflow-hidden bg-[#15294B] px-30 py-5 mb-3 rounded-md text-white text-2xl transition-colors duration-300 hover:text-[#15294B] group"
                 >
-                    Reset Password
+                <span className="relative z-10">Reset Password</span>
+                <span className="absolute inset-0 bg-gray-300 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                 </button>
             </div>
         </div>
