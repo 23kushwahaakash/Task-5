@@ -4,8 +4,8 @@ import { useNavigate } from "react-router-dom";
 function Role({tagline1,tagline2,button}) {
     const navigate = useNavigate(); 
   return (
-    <div className='bg-[#F1F5FA] rounded-2xl w-[85%] flex flex-col justify-center items-center ml-10  mb-20 shadow-xl'>
-        <div className="flex flex-col justify-center items-center w-[55%] mt-30 mb-30">
+    <div className='bg-[#F1F5FA] rounded-2xl md:w-[85%] flex flex-col justify-center items-center mx-10 mb-20 shadow-xl'>
+        <div className="flex flex-col justify-center items-center w-[55%] mt-5 md:mt-30 mb-5 md:mb-30">
             <h1 className='text-4xl text-[#15294B] font-serif mb-5'>{tagline1}</h1>
             <h1 className="mb-5">{tagline2}</h1>
             <button 

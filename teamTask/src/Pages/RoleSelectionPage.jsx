@@ -16,8 +16,8 @@ function RoleSelectionPage() {
             <img src={NextStep} alt="NextStep logo" className="pt-3 pb-3" />
             <h1 className="text-xl  font-serif">NextStep</h1>
         </div>
-        <div className="grid grid-cols-2 grid-rows-2  gap-x-20 mt-15">
-            <div className="relative w-[400px] h-[400px] mx-auto">
+        <div className="grid md:grid-cols-2 grid-rows-2  gap-x-20 mt-20">
+            <div className="relative hidden md:block md:w-[400px] md:h-[400px] mx-auto">
                 <img 
                 src={ManThinking}
                 className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48"
@@ -45,7 +45,7 @@ function RoleSelectionPage() {
                   button="Start Hiring"
                 />
             </div>
-            <div>
+            <div className="hidden md:block">
                 <img src={TwoMenSitting} alt="two men"/>
             </div>
         </div>
