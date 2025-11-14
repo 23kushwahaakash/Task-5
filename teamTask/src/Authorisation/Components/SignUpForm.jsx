@@ -63,7 +63,7 @@ function SignUpForm() {
 
     return (
         <div className="flex justify-center flex-col shadow-lg items-center md:w-[100%] bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5">
-            <div className="md:w-[100%] flex justify-center items-center flex-col">
+            <div className="max-w-md w-[90%] mx-auto flex justify-center items-center flex-col">
                 <h1 className="mb-5 mt-5 text-2xl font-bold">Sign Up</h1>
                 <form onSubmit={signUp} className="w-[80%]">
                     <div className="border-b border-gray-300">
