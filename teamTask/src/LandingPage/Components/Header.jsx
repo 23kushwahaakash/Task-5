@@ -38,7 +38,7 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 hidden md:flex">
+      <div className=" md:items-center gap-3 hidden md:flex">
          <button onClick={()=>navigate("/jobseeker/home")} ><SmallerTabs icon={Home} title="Home" /></button>
         <button onClick={()=>navigate("/chats")} ><SmallerTabs icon={MessageCircle} title="Chats" badge="7" /></button>
         <button onClick={()=>navigate("/jobs")}><SmallerTabs icon={Briefcase} title="Jobs" /></button>

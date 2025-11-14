@@ -6,7 +6,7 @@ import Google from "../Images/google.png"
 
 function Footer() {
   return (
-    <div className="gradient-animate text-white grid pt-5">
+    <div className="gradient-animate text-white grid">
         <div className="md:m-20 m-10 border-b pb-15 grid md:grid-cols-4">
             <div className=" w-[80%] grid-col-1 mb-10">
                 <div className="flex flex-col items-start">
