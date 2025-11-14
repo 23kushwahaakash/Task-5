@@ -8,6 +8,7 @@ import CreateNewPasswordPage from "./Authorisation/Pages/CreateNewPasswordPage"
 import UpdatedPasswordPage from "./Authorisation/Pages/UpdatedPasswordPage"
 import JSLandingPage from "./LandingPage/Pages/JSLandingPage"
 import RoleSelectionPage from "./RoleSelectionPage/Pages/RoleSelectionPage"
+import HomePage from "./HomePage/Pages/HomePage"
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/forgotpassword/verifyotp/createnew/updated" element={<UpdatedPasswordPage/>}></Route>
         <Route path="/signup/roleselection" element={<RoleSelectionPage/>}></Route>
         <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
+        <Route path="/jobseeker/home" element={<HomePage/>}></Route>
       </Routes>
     </div>
   )

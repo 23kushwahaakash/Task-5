@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Home, MessageCircle, Briefcase, X } from "lucide-react";
+import { Home, MessageCircle, Briefcase, X ,User} from "lucide-react";
 
 function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +20,8 @@ function Hamburger() {
         aria-label="Menu"
       >
         <span className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+        <span className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
         <span className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? 'opacity-0' : ''}`}></span>
-        <span className={`w-6 h-0.5 bg-gray-700 transition-all duration-300 ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
       </button>
 
       {isOpen && (
@@ -41,9 +41,18 @@ function Hamburger() {
 
         <nav className="flex flex-col px-4 gap-2">
           <a 
+            href="/profile" 
+            onClick={closeMenu}
+            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
+          >
+            <User className="w-5 h-5 text-gray-700" />
+            <span className="text-gray-700 font-medium">Profile</span>
+          </a>
+
+          <a 
             href="/home" 
             onClick={closeMenu}
-            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
+            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >
             <Home className="w-5 h-5 text-gray-700" />
             <span className="text-gray-700 font-medium">Home</span>
@@ -52,17 +61,17 @@ function Hamburger() {
           <a 
             href="/chats" 
             onClick={closeMenu}
-            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
+            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >
             <MessageCircle className="w-5 h-5 text-gray-700" />
             <span className="text-gray-700 font-medium">Chats</span>
-            <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded-full">7</span>
+            <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded-full">0</span>
           </a>
 
           <a 
             href="/jobs" 
             onClick={closeMenu}
-            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors"
+            className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >
             <Briefcase className="w-5 h-5 text-gray-700" />
             <span className="text-gray-700 font-medium">Jobs</span>
