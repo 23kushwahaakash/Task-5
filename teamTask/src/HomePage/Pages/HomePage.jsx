@@ -19,9 +19,9 @@ function HomePage() {
           <Companies/>
           <General/>
           <div className='p-5'>
-            <h1 className='font-serif text-xl'>Industry Insights</h1>
-            <h1>Get real-time updates on growing industries, trending job roles, and the skills top employers want in 2025</h1>
-            <div className='grid grid-rows-4 md:grid-cols-4 md:gap-10 md:mt-10'>
+            <h1 className='font-serif text-xl md:text-3xl '>Industry Insights</h1>
+            <h1 className='text-xl'>Get real-time updates on growing industries, trending job roles, and the skills top employers want in 2025</h1>
+            <div className='grid md:grid-cols-4 md:gap-10 md:mt-10 md:mb-15'>
 
               <IndustryInsightsCards
               logo={Insight1}
@@ -29,7 +29,7 @@ function HomePage() {
               content="India's tech sector is expanding fast - AI, Cloud, and Cybersecurity roles up by 40% this year"
               skills="Python, Javascript, Data Analytics, Cloud Computing"
               salary="$ 4-10 USD"
-              jobRoles={<ul className='list-disc list-inside'>
+              jobRoles={<ul className='list-disc list-inside md:mb-10'>
                 <li>Full Stack Developer</li>
                 <li>Data Scientist</li>
                 <li>Cloud Solution Architect</li>
@@ -43,7 +43,7 @@ function HomePage() {
               content="Strong demand for digital marketers, Data Analysts, and Finance Associates"
               skills="Excel, Google, Analytics, SEO, Financial Modelling"
               salary="$ 8-10 USD"
-              jobRoles={<ul>
+              jobRoles={<ul className='list-disc list-inside'>
                 <li>Digital Marketer</li>
                 <li>Business Analyst</li>
                 <li>Financial Analyst</li>
@@ -57,7 +57,7 @@ function HomePage() {
               content="Opportunities rising in Automation, EVs and Sustainable Manufacturing"
               skills="CAD, PLC Programming, Quality Control Robotics"
               salary="$ 3-7 USD"
-              jobRoles={<ul>
+              jobRoles={<ul className='list-disc list-inside'>
                 <li>Automation Engineer</li>
                 <li>Mechanical Design Engineer</li>
                 <li>Quality Assurance Manager</li>
@@ -71,7 +71,7 @@ function HomePage() {
               content="Startups and agencies are hiring UI/UX Designers, Graphic Artists and Content Creators"
               skills="Figma, Canva, Adobe Suite, User Research"
               salary="$ 3-6 USD"
-              jobRoles={<ul>
+              jobRoles={<ul className='list-disc list-inside'>
                 <li>Product Designer</li>
                 <li>UI/UX Designer</li>
                 <li>Social Media Manager</li>
@@ -81,7 +81,6 @@ function HomePage() {
             </div>
           </div>
       </div>
-      
       <Footer/>
     </div>
   )
