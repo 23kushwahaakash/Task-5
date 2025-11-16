@@ -41,7 +41,7 @@ function Hamburger() {
 
         <nav className="flex flex-col px-4 gap-2">
           <a 
-            href="/profile" 
+            href="/jobseeker/profile" 
             onClick={closeMenu}
             className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >

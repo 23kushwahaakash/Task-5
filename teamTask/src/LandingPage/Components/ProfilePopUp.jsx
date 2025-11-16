@@ -38,7 +38,7 @@ function ProfilePopUp({ onClose }) {
 
      
       <div className="py-1">
-        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" onClick={()=>navigate("/profile")}>
+        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" onClick={()=>navigate("/jobseeker/profile")}>
           <UserCircle className="w-5 h-5" />
           <span>View Profile</span>
         </button>

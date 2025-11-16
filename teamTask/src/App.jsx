@@ -27,7 +27,7 @@ function App() {
         <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
         <Route path="/jobseeker/home" element={<HomePage/>}></Route>
         <Route path="/jobseeker/jobs" element={<JobPage/>}></Route>
-        <Route path="/profile" element={<ProfilePage/>}></Route>
+        <Route path="jobseeker/profile" element={<ProfilePage/>}></Route>
       </Routes>
     </div>
   )
