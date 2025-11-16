@@ -1,8 +1,8 @@
-import Header from '../../LandingPage/Components/Header'
-import Footer from '../../LandingPage/Components/Footer'
-import Square from '../../ProfilePage/Images/Square.png'
-import CrowdLeft from '../../Authorisation/Images/CrowdLeft.png'
-import CrowdRight from '../../Authorisation/Images/CrowdRight.png'
+import Header from '../LandingPage/Components/Header'
+import Footer from '../LandingPage/Components/Footer'
+import Square from '../ProfilePage/Images/Square.png'
+import CrowdLeft from '../Authorisation/Images/CrowdLeft.png'
+import CrowdRight from '../Authorisation/Images/CrowdRight.png'
 
 
 function About() {

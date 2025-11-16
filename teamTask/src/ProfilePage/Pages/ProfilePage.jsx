@@ -3,8 +3,10 @@ import Upload from "../Images/Upload.png"
 import UploadIcon from "../Images/UploadIcon.png"
 import Header from '../../LandingPage/Components/Header'
 import Footer from '../../LandingPage/Components/Footer'
+import { useNavigate } from "react-router-dom"
 
 function ProfilePage() {
+  const navigate=useNavigate();
   return (
     <div className='bg-[#F6F9FE]'>
       <Header/>
@@ -213,7 +215,9 @@ function ProfilePage() {
       </div>
 
       <div className="flex justify-center mt-10 mb-10">
-        <button className="bg-[#0F2B46] text-white px-10 py-3 rounded-md font-medium hover:opacity-90 transition">
+        <button 
+        className="bg-[#0F2B46] text-white px-10 py-3 rounded-md font-medium hover:opacity-90 transition"
+        onClick={()=>navigate("/jobseeker/profile/submit")}>
           Submit Application
         </button>
       </div>
