@@ -22,6 +22,7 @@ function App() {
         <Route path="/forgotpassword/verifyotp/createnew/updated" element={<UpdatedPasswordPage/>}></Route>
         <Route path="/signup/roleselection" element={<RoleSelectionPage/>}></Route>
         <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
+        
       </Routes>
     </div>
   )
