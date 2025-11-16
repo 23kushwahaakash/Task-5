@@ -227,7 +227,7 @@ function JobPage() {
                 </div>
 
 
-                <div className="flex flex-col">
+                <div className="flex gap-5 flex-col">
                     <Jobcards
                     time="10 min ago"
                     logo={Google}

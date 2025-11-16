@@ -10,6 +10,7 @@ import JSLandingPage from "./LandingPage/Pages/JSLandingPage"
 import RoleSelectionPage from "./RoleSelectionPage/Pages/RoleSelectionPage"
 import HomePage from "./HomePage/Pages/HomePage"
 import JobPage from "./JobPage/Pages/JobPage"
+import ProfilePage from "./ProfilePage/Pages/ProfilePage"
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
         <Route path="/jobseeker/home" element={<HomePage/>}></Route>
         <Route path="/jobseeker/jobs" element={<JobPage/>}></Route>
+        <Route path="/profile" element={<ProfilePage/>}></Route>
       </Routes>
     </div>
   )
