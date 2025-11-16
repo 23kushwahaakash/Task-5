@@ -29,7 +29,7 @@ function App() {
         <Route path="/jobseeker/home" element={<HomePage/>}></Route>
         <Route path="/jobseeker/jobs" element={<JobPage/>}></Route>
         <Route path="jobseeker/profile" element={<ProfilePage/>}></Route>
-        <Route Path="/about" element={<About/>}></Route>
+        <Route path="/about" element={<About/>}></Route>
       </Routes>
     </div>
   )
