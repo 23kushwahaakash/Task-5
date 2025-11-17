@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './app.css'; 
+import './home.css'; 
 
 import Header from './header';
 import WelcomeBanner from './welcomebanner';
@@ -15,7 +15,7 @@ import TopJobsByApplicants from './topjobs';
 import SavedTalentPool from './savedtalentpool';
 import Footer from './footer';
 
-function app() {
+function JobGiverHome() {
   
   const googlePost = {
     companyLogo: "Task-5/teamTask/src/JobGiver/Components/images/google.svg",
@@ -100,4 +100,4 @@ function app() {
   );
 }
 
-export default app;
+export default JobGiverHome;
