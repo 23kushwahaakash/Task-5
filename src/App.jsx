@@ -15,7 +15,7 @@ import About from "./AboutPage/About"
 import SubmitPage from "./SubmitPage/SubmitPage"
 import DashboardPage from "./Dashboard/DashboardPage"
 import PromotionPage from "./PromotionPage/PromotionPage"
-import JobGiverHome from "./JobGiver/Components/home.jsx"
+import JobGiverHome from "../teamTask/src/JobGiver/Components/home"
 
 function App() {
   return (
