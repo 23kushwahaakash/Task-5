@@ -1,4 +1,5 @@
 import {Routes,Route,Link,NavLink} from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 import React from 'react'
 import LogInPage from "./Authorisation/Pages/LogInPage"
 import SignUpPage from "./Authorisation/Pages/SignUpPage"
@@ -20,6 +21,7 @@ import PromotionPage from "./PromotionPage/PromotionPage"
 function App() {
   return (
     <div>
+      <Toaster position="top-right" reverseOrder={false}/>
       <Routes>
         <Route path="/" element={<PromotionPage/>}/>
         <Route path="/login" element={<LogInPage/>}></Route>

@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import toast from "react-hot-toast"
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import axios from "axios";
@@ -13,7 +14,7 @@ function VerifyForm() {
 
   useEffect(() => {
     if (!email) {
-      alert("No email found. Please sign up again.");
+      toast.error("No email found. Please sign up again.");
       navigate('/signup');
     }
   }, [email, navigate]);
@@ -58,12 +59,12 @@ function VerifyForm() {
     const otpValue = otp.join("");
 
     if (otpValue.length !== 6) {
-      alert("Please enter all 6 digits");
+      toast.error("Please enter all 6 digits");
       return;
     }
 
     if (!email) {
-      alert("Email is missing. Please sign up again.");
+      toast.error("Email is missing. Please sign up again.");
       navigate('/signup');
       return;
     }
@@ -89,13 +90,13 @@ function VerifyForm() {
       );
 
       console.log("OTP Verification Successful:", response.data);
-      alert("OTP verified successfully!");
+      toast.success("OTP verified successfully!");
 
       navigate('/login');
 
     } catch (error) {
       console.error("OTP Verification Failed:", error.response ? error.response.data : error.message);
-      alert("OTP Verification Failed! " + (error.response?.data?.message || error.message));
+      toast.error("OTP Verification Failed! " + (error.response?.data?.message || error.message));
     } finally {
       setIsLoading(false);
     }
