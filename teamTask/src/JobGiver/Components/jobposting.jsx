@@ -1,6 +1,8 @@
 import React from 'react';
 import './jobposting.css';
-
+import searchIcon from './images/search.svg';
+import viewIcon from './images/apeye.svg';
+import actionIcon from './images/apdots.svg';
 const jobposting = () => {
   const jobPostings = [
     { title: "Senior Frontend Developer", datePosted: "Oct 26, 2023", status: "Active", applicants: 154 },
@@ -15,7 +17,7 @@ const jobposting = () => {
         <h3>Job Postings</h3>
         <div className="header-actions">
           <button className="btn-ghost mr-2">
-            <img src="Task-5/teamTask/src/JobGiver/Components/images/search.svg" alt="Search" className="icon" /> 
+            <img src={searchIcon} alt="Search" className="icon" /> 
           </button>
           <button className="btn-ghost">
             <img src="/assets/icon-filter.png" alt="Filter" className="icon" /> 
@@ -41,8 +43,8 @@ const jobposting = () => {
               <td>{job.datePosted}</td>
               <td><span className="badge badge-success">{job.status}</span></td> 
               <td>{job.applicants}</td>
-              <td><button className="btn-ghost"><img src="Task-5/teamTask/src/JobGiver/Components/images/apeye.svg" alt="View" className="icon" /></button></td> 
-              <td><button className="btn-ghost"><img src="Task-5/teamTask/src/JobGiver/Components/images/apdots.svg" alt="Actions" className="icon" /></button></td>
+              <td><button className="btn-ghost"><img src={viewIcon}alt="View" className="icon" /></button></td> 
+              <td><button className="btn-ghost"><img src={actionIcon} alt="Actions" className="icon" /></button></td>
             </tr>
           ))}
         </tbody>

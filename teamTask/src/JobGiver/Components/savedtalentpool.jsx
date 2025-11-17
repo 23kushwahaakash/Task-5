@@ -1,11 +1,15 @@
 import React from 'react';
 import './savedtalentpool.css';
-
+import avatarMayank from './images/Primitive.img.svg';
+import avatarAnkit from './images/Primitive.img1.svg';
+import avatarPriya from './images/Primitive.img2.svg';
+import messageIcon from './images/message.svg';
+import userIcon from './images/pp.svg';
 const savedtalentpool = () => {
   const savedTalents = [
-    { id: 1, name: "Mayank Kumar", role: "Sr. UX Designer", avatar: "/assets/avatar-mayank.png" },
-    { id: 2, name: "Ankit Singh", role: "Product Manager", avatar: "/assets/avatar-ankit.png" },
-    { id: 3, name: "Priya Sharma", role: "Frontend Developer", avatar: "/assets/avatar-priya.png" },
+    { id: 1, name: "Mayank Kumar", role: "Sr. UX Designer", avatar: avatarMayank },
+    { id: 2, name: "Ankit Singh", role: "Product Manager", avatar: avatarAnkit },
+    { id: 3, name: "Priya Sharma", role: "Frontend Developer", avatar:  avatarPriya },
   ];
 
   return (
@@ -25,8 +29,8 @@ const savedtalentpool = () => {
               </div>
             </div>
             <div className="talent-actions">
-              <button className="btn-ghost"><img src="/assets/icon-message-blue.png" alt="Contact" className="icon" /></button> 
-              <button className="btn-ghost"><img src="/assets/icon-user-blue.png" alt="View Profile" className="icon" /></button> 
+              <button className="btn-ghost"><img src={messageIcon} alt="Contact" className="icon" />Contact</button> 
+              <button className="btn-ghost"><img src={userIcon}alt="View Profile" className="icon" />View Profile</button> 
             </div>
           </li>
         ))}

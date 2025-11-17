@@ -1,13 +1,17 @@
 import React from 'react';
 import './applicantpipeline.css';
-
+import newIcon from './images/apcontact.svg';
+import reviewIcon from './images/apeye.svg';
+import interviewIcon from './images/apcalendar.svg';
+import hiredIcon from './images/apdots.svg';
+import messageIcon from './images/apmsg.svg';
 const applicantpipeline = () => {
   const pipelineStages = [
-    { label: "New Applicants", count: 2, icon: "Task-5/teamTask/src/JobGiver/Components/images/apcontact.svg", type: "new" },
-    { label: "In Review", count: 5, icon: "Task-5/teamTask/src/JobGiver/Components/images/apeye.svg", type: "review" },
-    { label: "Interviews Scheduled", count: 3, icon: "Task-5/teamTask/src/JobGiver/Components/images/apcalendar.svg", type: "interview" },
-    { label: "Hired", count: 1, icon: "Task-5/teamTask/src/JobGiver/Components/images/apdots.svg", type: "hired" },
-    { label: "Messages", count: 12, icon: "Task-5/teamTask/src/JobGiver/Components/images/apmsg.svg", type: "message" },
+    { label: "New Applicants", count: 2, icon: newIcon, type: "new" },
+    { label: "In Review", count: 5, icon: reviewIcon, type: "review" },
+    { label: "Interviews Scheduled", count: 3, icon: interviewIcon, type: "interview" },
+    { label: "Hired", count: 1, icon: hiredIcon, type: "hired" },
+    { label: "Messages", count: 12, icon: messageIcon, type: "message" },
   ];
 
   return (

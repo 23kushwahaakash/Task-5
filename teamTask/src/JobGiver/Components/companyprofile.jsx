@@ -1,6 +1,6 @@
 import React from 'react';
 import './companyprofile.css';
-
+import tipIcon from './images/Primitive.div.svg';
 const companyprofile = () => {
   const completeness = 85; 
 
@@ -15,7 +15,7 @@ const companyprofile = () => {
       </div>
       <p className="completeness-text">{completeness}% profile completeness</p>
       <div className="profile-tip flex-center">
-        <img src="Task-5/teamTask/src/JobGiver/Components/images/Primitive.div.svg" alt="Tip" className="icon mr-1" />
+        <img src={tipIcon} alt="Tip" className="icon mr-1" />
         <span>Complete your profile to attract more applicants</span>
       </div>
     </div>

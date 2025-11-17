@@ -1,12 +1,15 @@
 import React from 'react';
 import './analytics.css';
-
+import activeIcon from './images/bag.svg';
+import newIcon from './images/apcontact.svg';
+import calendarIcon from './images/apcalendar.svg';
+import warningIcon from './images/warning.svg';
 const analytics = () => {
   const metrics = [
-    { label: "Active Job Posts", value: 3, icon: "Task-5/teamTask/src/JobGiver/Components/images/bag.svg" },
-    { label: "Total Applicants", value: 453, icon: "Task-5/teamTask/src/JobGiver/Components/images/apcontact.svg" },
-    { label: "Interviews Scheduled", value: 7, icon: "Task-5/teamTask/src/JobGiver/Components/images/apcalendar" },
-    { label: "Expiring Soon", value: 2, icon: "Task-5/teamTask/src/JobGiver/Components/images/warning.svg" },
+    { label: "Active Job Posts", value: 3, icon: activeIcon },
+    { label: "Total Applicants", value: 453, icon: newIcon },
+    { label: "Interviews Scheduled", value: 7, icon: calendarIcon },
+    { label: "Expiring Soon", value: 2, icon: warningIcon },
   ];
 
   return (

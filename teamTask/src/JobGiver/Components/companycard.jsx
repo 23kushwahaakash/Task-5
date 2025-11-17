@@ -1,6 +1,10 @@
 import React from 'react';
 import './companycard.css';
-
+import optionIcon from './images/union.svg';
+import likeIcon from './images/heart.svg';
+import shareIcon from './images/share.svg';
+import commentIcon from './images/message.svg';
+import sendIcon from './images/send.svg';
 const companycard = ({ companyLogo, companyName, postImage, title, description, tags, isNewPost }) => {
   return (
     <div className="company-card card">
@@ -10,7 +14,7 @@ const companycard = ({ companyLogo, companyName, postImage, title, description, 
           <img src={companyLogo} alt={`${companyName} Logo`} className="company-logo" />
           <span className="company-name">{companyName}</span>
         </div>
-        <img src="Task-5/teamTask/src/JobGiver/Components/images/union.svg" alt="Options" className="icon options-icon" /> 
+        <img src={optionIcon} alt="Options" className="icon options-icon" /> 
       </div>
       <div className="post-image-container">
         <img src={postImage} alt="Post Visual" className="post-image" />
@@ -25,11 +29,11 @@ const companycard = ({ companyLogo, companyName, postImage, title, description, 
         </div>
         <div className="post-actions flex-between">
           <div className="action-icons">
-            <img src="Task-5/teamTask/src/JobGiver/Components/images/heart.svg" alt="Like" className="icon" /> 
-            <img src="Task-5/teamTask/src/JobGiver/Components/images/message.svg" alt="Comment" className="icon" /> 
-            <img src="Task-5/teamTask/src/JobGiver/Components/images/share.svg" alt="Share" className="icon" /> 
+            <img src={likeIcon} alt="Like" className="icon" /> 
+            <img src={commentIcon} alt="Comment" className="icon" /> 
+            <img src={shareIcon} alt="Share" className="icon" /> 
           </div>
-          <button className="btn-ghost">View article <img src="/assets/icon-arrow-right.png" alt="Arrow" className="icon" /></button> 
+          <button className="btn-ghost">Share<img src={sendIcon} alt="Arrow" className="icon" /></button> 
         </div>
       </div>
     </div>

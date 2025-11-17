@@ -14,13 +14,16 @@ import ApplicantTrends from './applicanttrends';
 import TopJobsByApplicants from './topjobs';
 import SavedTalentPool from './savedtalentpool';
 import Footer from './footer';
-
+import googleIcon from './images/google.svg';
+import googlePostImage from './images/unsplash_google.svg';
+import microsoftPostImage from './images/unsplash_microsoft.svg';
+import microsoftIcon from './images/microsoft.svg';
 function JobGiverHome() {
   
   const googlePost = {
-    companyLogo: "Task-5/teamTask/src/JobGiver/Components/images/google.svg",
+    companyLogo: googleIcon,
     companyName: "Google",
-    postImage: "Task-5/teamTask/src/JobGiver/Components/images/unsplash-google.png",
+    postImage: googlePostImage,
     title: "Google's 2024 Hiring Trends",
     description: "Discover the key skills and roles Google is focusing on this year...",
     tags: ["Hiring", "Tech", "Future of Work"],
@@ -28,9 +31,9 @@ function JobGiverHome() {
   };
 
   const microsoftPost = {
-    companyLogo: "Task-5/teamTask/src/JobGiver/Components/images/google.svg",
+    companyLogo:microsoftIcon,
     companyName: "Microsoft",
-    postImage: "Task-5/teamTask/src/JobGiver/Components/images/unsplash-microsoft.png",
+    postImage: microsoftPostImage,
     title: "Embracing Remote Work: Our Strategy",
     description: "How Microsoft is building a hybrid model that works for everyone...",
     tags: ["Remote Work", "Culture"],
@@ -80,14 +83,6 @@ function JobGiverHome() {
           <TopJobsByApplicants />
         </div>
 
-        
-        <div className="grid-item span-col-12">
-           <ApplicantTrends />
-        </div>
-
-        <div className="grid-item span-col-7">
-          <TopJobsByApplicants />
-        </div>
         <div className="grid-item span-col-5">
           <SavedTalentPool />
         </div>
