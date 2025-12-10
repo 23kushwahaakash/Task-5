@@ -8,7 +8,7 @@ function LogInForm() {
   const navigate=useNavigate();
     const [showPassword,setShowPassword]=useState(false);
     const togglePasswordVisibility=()=>setShowPassword(!showPassword);
-const handleLogin=()=>{navigate("/jobgiver");
+const handleLogin=()=>{navigate("/jobrecruiter/landingpage");
 }
 
   return (

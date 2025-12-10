@@ -17,8 +17,16 @@ const StatCard = ({ icon, value, label }) => (
 
 const HeroSection = () => (
   <section className="relative h-[650px] overflow-hidden bg-gray-900">
-   
-    <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url(${HeroBackground})` }}>
+    <div 
+      className="absolute inset-0 bg-cover bg-center" 
+      style={{ 
+        backgroundImage: `url(${HeroBackground})`,
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center', 
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed' 
+      }}
+    >
       <div className="absolute inset-0 bg-black opacity-60"></div>
     </div>
 

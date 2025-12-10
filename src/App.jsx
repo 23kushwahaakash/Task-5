@@ -15,7 +15,7 @@ import About from "./AboutPage/About"
 import SubmitPage from "./SubmitPage/SubmitPage"
 import DashboardPage from "./Dashboard/DashboardPage"
 import PromotionPage from "./PromotionPage/PromotionPage"
-import JobGiverHome from "../teamTask/src/JobGiver/Components/home"
+import LandingPage from "./JobRecruiter/LandingPage/Pages/LandingPage"
 
 function App() {
   return (
@@ -32,11 +32,11 @@ function App() {
         <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
         <Route path="/jobseeker/home" element={<HomePage/>}></Route>
         <Route path="/jobseeker/jobs" element={<JobPage/>}></Route>
-        <Route path="jobseeker/profile" element={<ProfilePage/>}></Route>
+        <Route path="/jobseeker/profile" element={<ProfilePage/>}></Route>
         <Route path="/about" element={<About/>}></Route>
         <Route path="/jobseeker/profile/submit" element={<SubmitPage/>}></Route>
         <Route path="/jobseeker/dashboard" element={<DashboardPage/>}></Route>
-        <Route path="/jobgiver" element={<JobGiverHome/>}></Route>
+       <Route path="/jobrecruiter/landingpage" element={<LandingPage/>}></Route>
       </Routes>
     </div>
   )
