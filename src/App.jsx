@@ -20,6 +20,7 @@ import AboutPage from "./JobRecruiter/AboutPage/Pages/AboutPage"
 import JRDashboardPage from "./JobRecruiter/DashboardPage/Pages/JRDashboardPage"
 import JRHomePage from "./JobRecruiter/HomePage/Pages/JRHomePage"
 import NotificationPage from "./JobRecruiter/NotificationPage/Pages/NotificationPage"
+import JRProfilePage from "./JobRecruiter/ProfilePage/Pages/JRProfilePage"
 function App() {
   return (
     <div>
@@ -44,6 +45,7 @@ function App() {
        <Route path="/jobrecruiter/dashboardpage" element={<JRDashboardPage/>}></Route>
        <Route path="/jobrecruiter/homepage" element={<JRHomePage/>}></Route>
        <Route path="/jobrecruiter/notifications" element={<NotificationPage/>}></Route>
+       <Route path="/jobrecruiter/profilepage" element={<JRProfilePage/>}></Route>
       </Routes>
     </div>
   )
