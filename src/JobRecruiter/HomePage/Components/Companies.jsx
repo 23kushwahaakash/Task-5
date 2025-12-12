@@ -2,7 +2,7 @@ import GoogleLogo from "../Images/GoogleLogo.png"
 import GoogleOffice from "../Images/GoogleOffice.png"
 import MicrosoftLogo from "../Images/MicrosoftLogo.png"
 import MicrosoftOffice from "../Images/MicrosoftOffice.png" 
-import CompanyCard from './CompanyCard'
+import CompanyCards from './CompanyCards'
 
 function Companies() {
   return (
@@ -20,7 +20,7 @@ function Companies() {
         </div>
 
         <div className="md:grid grid-cols-2 gap-5">
-          <CompanyCard
+          <CompanyCards
           logo={GoogleLogo}
           title="Google"
           followers="45,556,204"
@@ -28,7 +28,7 @@ function Companies() {
           tagline="Exciting carrer openings now live! Join our growing global team. Contribute to the one of the largest projects."
           image={GoogleOffice}/>
 
-         <CompanyCard
+         <CompanyCards
           logo={MicrosoftLogo}
           title="Microsoft"
           followers="66,596,754"

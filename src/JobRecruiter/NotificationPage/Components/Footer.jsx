@@ -6,7 +6,7 @@ import Google from '../Images/google.svg';
 
 function Footer() {
   return (
-    <div className="bg-gradient-to-b from-slate-500 to-gray-900 text-white grid">
+    <div className="bg-linear-to-b from-slate-500 to-gray-900 text-white grid">
         <div className="md:m-20 m-10 border-b pb-15 grid md:grid-cols-4">
             <div className=" w-[80%] grid-col-1 mb-10">
                 <div className="flex flex-col items-start">
@@ -17,7 +17,7 @@ function Footer() {
                     <p>Great platform for the job seeker that passionate about startups. Find your dream job easier.</p>
                 </div>
             </div>
-            <div className="hidden md:block flex flex-col gap-3 grid-col-2">
+            <div className="flex hidden md:block  flex-col gap-3 grid-col-2">
                 <h1 className="text-xl font-semibold "><a href="/about" className="hover:underline cursor-pointer">About</a></h1>
                 <h1>Companies</h1>
                 <h1>Pricing</h1>

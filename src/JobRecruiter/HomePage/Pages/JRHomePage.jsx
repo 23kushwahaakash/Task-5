@@ -9,7 +9,7 @@ import SavedTalentPool from '../Components/SavedTalentPool';
 import Footer from '../Components/Footer';
 import AddPost from '../Components/AddPost';
 import Companies from '../Components/Companies';
-import CompanyCard from '../Components/CompanyCard';
+import CompanyCards from '../Components/CompanyCards';
 
 const JRHomePage = () => {
   return (
@@ -18,7 +18,6 @@ const JRHomePage = () => {
       <div className='bg-white w-[90%] md:w-[95%] shadow-lg pt-[12%] md:pt-[6%] mx-auto flex flex-col justify-center items-center'>
           <AddPost className="pb-5"></AddPost>
           <Companies/>
-          <CompanyCard/>
         
     <div className="bg-white min-h-screen">
 

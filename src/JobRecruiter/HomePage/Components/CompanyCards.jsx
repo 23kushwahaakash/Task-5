@@ -4,7 +4,7 @@ import Share from "../Images/Share.png"
 import Download from "../Images/Download.png"
 import Comment from "../Images/Comment.png"
 
-function CompanyCard({logo,title,followers,time,tagline,image}) {
+function CompanyCards({logo,title,followers,time,tagline,image}) {
   return (
     <div className='border border-gray-700 rounded-lg mb-5 p-2'>
         <div className="flex  border-b border-gray-300 mb-3 ">
@@ -33,4 +33,4 @@ function CompanyCard({logo,title,followers,time,tagline,image}) {
   )
 }
 
-export default CompanyCard
+export default CompanyCards
