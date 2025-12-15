@@ -1,0 +1,1 @@
+export const USER_API_ENDPOINT="https://job-seeking-app-1-5auy.onrender.com/api/v1/user"

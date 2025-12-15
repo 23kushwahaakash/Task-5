@@ -1,8 +1,10 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
+import toast from "react-hot-toast"
 import google from "../Images/google.png";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { USER_API_ENDPOINT } from "../../APIs/Data";
 
 function SignUpForm() {
     const navigate = useNavigate();
@@ -24,28 +26,28 @@ function SignUpForm() {
         console.log("sending", userData);
 
         if (!fullname || !email || !password || !confirmpassword) {
-            alert("Please fill in all fields!");
+            toast.error("Please fill in all fields!");
             return;
         }
 
         if (password.length < 6) {
-            alert("Password must be at least 6 characters!");
+            toast.error("Password must be at least 6 characters!");
             return;
         }
         
         if (password !== confirmpassword) {
-            alert("Wrong Password");
+            toast.error("Wrong Password");
             return;
         }
 
         if (!agreedToTerms) {
-            alert("Please agree to the Terms of Services!");
+            toast.error("Please agree to the Terms of Services!");
             return;
         }
 
         try {
             const response = await axios.post(
-                "https://job-seeking-app-1-5auy.onrender.com/api/v1/user/SignUp",
+                `${USER_API_ENDPOINT}/signUp`,
                 userData,
                 {
                     headers: {
@@ -57,12 +59,12 @@ function SignUpForm() {
             navigate('/forgotpassword/verifyotp', { state: { email: email } });
         } catch (error) {
             console.error("Signup Failed:", error.response ? error.response.data : error.message);
-            alert("Signup Failed! " + (error.response?.data?.message || error.message));
+            toast.error("Signup Failed! " + (error.response?.data?.message || error.message));
         }
     };
 
     return (
-        <div className="flex justify-center flex-col shadow-lg items-center md:w-[100%] bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5">
+        <div className="flex justify-center flex-col shadow-lg items-center md:w-full bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5">
             <div className="max-w-md w-[90%] mx-auto flex justify-center items-center flex-col">
                 <h1 className="mb-5 mt-5 text-2xl font-bold">Sign Up</h1>
                 <form onSubmit={signUp} className="w-[80%]">

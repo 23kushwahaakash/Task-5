@@ -1,4 +1,5 @@
 import { ArrowLeft } from "lucide-react";
+import toast from "react-hot-toast"
 import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useRef, useEffect } from "react";
 import axios from "axios";
@@ -13,7 +14,7 @@ function VerifyForm() {
 
   useEffect(() => {
     if (!email) {
-      alert("No email found. Please sign up again.");
+      toast.error("No email found. Please sign up again.");
       navigate('/signup');
     }
   }, [email, navigate]);
@@ -58,12 +59,12 @@ function VerifyForm() {
     const otpValue = otp.join("");
 
     if (otpValue.length !== 6) {
-      alert("Please enter all 6 digits");
+      toast.error("Please enter all 6 digits");
       return;
     }
 
     if (!email) {
-      alert("Email is missing. Please sign up again.");
+      toast.error("Email is missing. Please sign up again.");
       navigate('/signup');
       return;
     }
@@ -89,22 +90,22 @@ function VerifyForm() {
       );
 
       console.log("OTP Verification Successful:", response.data);
-      alert("OTP verified successfully!");
+      toast.success("OTP verified successfully!");
 
       navigate('/login');
 
     } catch (error) {
       console.error("OTP Verification Failed:", error.response ? error.response.data : error.message);
-      alert("OTP Verification Failed! " + (error.response?.data?.message || error.message));
+      toast.error("OTP Verification Failed! " + (error.response?.data?.message || error.message));
     } finally {
       setIsLoading(false);
     }
   };
 
   return (
-    <div className="flex justify-center flex-col shadow-lg items-center md:w-[100%] bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5">
-      <div className="md:w-[100%] flex justify-center items-center flex-col mb-10">
-        <div className="flex gap-35 w-[100%]">
+    <div className="flex justify-center flex-col shadow-lg items-center md:w-full bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5">
+      <div className="md:w-full flex justify-center items-center flex-col mb-10">
+        <div className="flex gap-35 w-full">
           <button
             onClick={() => window.history.back()}
             className="hover:shadow-xl border flex justify-center items-center border-gray-300 w-12 rounded-4xl mt-2 ml-2 h-12"
