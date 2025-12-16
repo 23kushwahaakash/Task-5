@@ -1,4 +1,5 @@
 import {Routes,Route,Link,NavLink} from "react-router-dom"
+import { Toaster } from "react-hot-toast"
 import React from 'react'
 import LogInPage from "./Authorisation/Pages/LogInPage"
 import SignUpPage from "./Authorisation/Pages/SignUpPage"
@@ -21,9 +22,11 @@ import JRDashboardPage from "./JobRecruiter/DashboardPage/Pages/JRDashboardPage"
 import JRHomePage from "./JobRecruiter/HomePage/Pages/JRHomePage"
 import JRProfilePage from "./JobRecruiter/ProfilePage/Pages/JRProfilePage"
 import JRSubmitPage from "./JobRecruiter/SubmitPage/JRSubmitPage"
+
 function App() {
   return (
     <div>
+      <Toaster position="top-right" reverseOrder={false}/>
       <Routes>
         <Route path="/" element={<PromotionPage/>}/>
         <Route path="/login" element={<LogInPage/>}></Route>
