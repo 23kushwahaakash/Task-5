@@ -2,7 +2,7 @@ import NextStep from "../Images/NextStep.png"
 import Facebook from "../Images/facebook.png"
 import Apple from "../Images/apple.png"
 import Google from "../Images/google.png"
-import { Link } from "react-router-dom"
+import {Link} from "react-router-dom"
 
 
 function Footer() {
