@@ -1,6 +1,6 @@
 import { useState } from "react"; 
 import { useNavigate } from "react-router-dom";
-import NextStep from "../images/logo.svg";
+import NextStep from "../Images/logo.svg";
 import Humburger from "./Humburger";
 import SmallerTabs from "./SmallerTabs";
 import ProfilePopUp from "./ProfilePopUp"
