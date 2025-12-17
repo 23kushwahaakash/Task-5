@@ -1,13 +1,12 @@
 import { Eye,EyeOff,Mail,Lock } from "lucide-react";
 import toast from "react-hot-toast"
 import {useState} from "react";
-import {useNavigate} from "react-router-dom"
+import {useNavigate,Link} from "react-router-dom"
 import google from "../Images/google.png";
 import facebook from "../Images/facebook.png";
 import apple from "../Images/apple.png";
 import axios from "axios";
 import { USER_API_ENDPOINT } from "../../APIs/Data";
-import { Link } from "react-router-dom";
 
 function LogInForm() {
   const navigate=useNavigate();
@@ -52,7 +51,7 @@ function LogInForm() {
     }
 
   return (
-    <div className="flex justify-center flex-col shadow-lg items-center w-100 md:w-full bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5 ">
+    <div className="flex justify-center flex-col shadow-lg items-center w-[250%] md:w-full bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5 ">
         <div className="w-full max-w-[430px] flex justify-center items-center flex-col">
           <h1 className=" mb-5 mt-5 text-2xl font-bold">Login</h1>
           <form
