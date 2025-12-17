@@ -36,10 +36,10 @@ function CreateNewPasswordForm() {
     };
 
     return (
-        <div className="flex justify-center flex-col shadow-lg items-center md:w-[100%] bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5 p-6">
-            <div className="md:w-[100%] flex justify-center items-center flex-col">
+        <div className="flex w-[250%] justify-center flex-col shadow-lg items-center md:w-full bg-[#F1F5FA] border border-gray-300 rounded-xl mb-5 p-6">
+            <div className="md:w-full flex justify-center items-center flex-col">
                 <h1 className="mb-5 mt-5 text-2xl font-bold">Create a new password</h1>
-                <div className="w-[80%]">
+                <div className="w-full">
                     <div className="flex items-center gap-2 border-b border-gray-300 pt-5 pb-2">
                         <Lock className="flex-shrink-0" />
                         <input
@@ -57,7 +57,7 @@ function CreateNewPasswordForm() {
                         )}
                     </div>
                     <div className="flex items-center gap-2 border-b border-gray-300 pt-5 pb-2">
-                        <Lock className="flex-shrink-0" />
+                        <Lock className="shrink-0" />
                         <input
                             type={showConfirmPassword ? "text" : "password"}
                             id="confirmPassword"
@@ -85,7 +85,7 @@ function CreateNewPasswordForm() {
                 <button 
                  type="submit" 
                  onClick={handleResetPassword}
-                 className="relative overflow-hidden bg-[#15294B] px-30 py-5 mb-3 rounded-md text-white text-2xl transition-colors duration-300 hover:text-[#15294B] group"
+                 className="w-[80%] relative overflow-hidden bg-[#15294B] mt-5 py-2 mb-3 rounded-md text-white text-2xl transition-colors duration-300 hover:text-[#15294B] group"
                 >
                 <span className="relative z-10">Reset Password</span>
                 <span className="absolute inset-0 bg-gray-300 transform translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
