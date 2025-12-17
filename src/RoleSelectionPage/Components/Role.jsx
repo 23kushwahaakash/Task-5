@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 
-
 function Role({tagline1,tagline2,button,navigateTo}) {
     const navigate = useNavigate(); 
   return (
