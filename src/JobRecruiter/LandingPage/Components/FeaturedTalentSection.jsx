@@ -1,9 +1,9 @@
 import React from 'react';
 
-import SarahImage from '../images/sarah-johnson.svg';
-import RahulImage from '../images/rahul-sharma.svg';
-import PriyaImage from '../images/priya-patel.svg';
-import AmitImage from '../images/amit-kumar.svg';
+import SarahImage from '../Images/sarah-johnson.svg';
+import RahulImage from '../Images/rahul-sharma.svg';
+import PriyaImage from '../Images/priya-patel.svg';
+import AmitImage from '../Images/amit-kumar.svg';
 
 const FeaturedTalentSection = () => {
   const candidates = [
