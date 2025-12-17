@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DashboardMockup from '../images/dashboard-mockup.svg';
+import DashboardMockup from '../Images/dashboard-mockup.svg';
 
 const DashboardSection = () => (
   <section className="bg-gray-100 py-20 px-8 text-center">
