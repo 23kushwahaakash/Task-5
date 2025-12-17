@@ -1,5 +1,5 @@
 import {Mail} from "lucide-react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate,Link} from "react-router-dom";
 
 function ForgotForm() {
   const navigate = useNavigate(); 
