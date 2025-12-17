@@ -1,7 +1,7 @@
-import NextStep from "../Images/logo.svg"
-import Facebook from "../Images/facebook.svg"
-import Apple from "../Images/apple.svg"
-import Google from "../Images/google.svg"
+import NextStep from "../images/logo.svg"
+import Facebook from "../images/facebook.svg"
+import Apple from "../images/apple.svg"
+import Google from "../images/google.svg"
 import {Link} from 'react-router-dom'
 
 
