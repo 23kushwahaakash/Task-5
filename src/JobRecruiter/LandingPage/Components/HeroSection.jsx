@@ -1,8 +1,8 @@
 import React from 'react';
-import HeroBackground from '../images/hero-bg.svg';
-import CandidateIcon from '../images/candidates.svg';
-import RecruiterIcon from '../images/recruiters.svg';
-import GrowthIcon from '../images/growth.svg';
+import HeroBackground from '../Images/hero-bg.svg';
+import CandidateIcon from '../Images/candidates.svg';
+import RecruiterIcon from '../Images/recruiters.svg';
+import GrowthIcon from '../Images/growth.svg';
 import { Link } from "react-router-dom";
 
 const StatCard = ({ icon, value, label }) => (
