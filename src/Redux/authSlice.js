@@ -8,7 +8,8 @@ const authSlice = createSlice({
         userEmail:null,
         userRole:null,
         accessToken:null,
-        refreshToken:null
+        refreshToken:null,
+        userPass:null,
     },
     reducers:{
         setUserId:(state, action)=>{
@@ -29,9 +30,12 @@ const authSlice = createSlice({
         setRefreshToken:(state, action)=>{
             state.refreshToken=action.payload;
         },
+        setUserPass:(state, action)=>{
+            state.userPass=action.payload;
+        }
     }
 });
 
-export const {setUserId,setUserName,setUserEmail,setUserRole,setAccessToken,setRefreshToken} = authSlice.actions;
+export const {setUserId,setUserName,setUserEmail,setUserRole,setAccessToken,setRefreshToken,setUserPass} = authSlice.actions;
 export default authSlice.reducer;
 export const authSliceReducer = authSlice.reducer;

@@ -13,8 +13,13 @@ function Role({tagline1,tagline2,button,role,navigateTo}) {
       try{
         const res = await axios.post(
           `${AUTH_API_ENDPOINT}/roleselection`,
-          {role},
-          { withCredentials: true }
+          {role},{
+            headers:{
+              "Content-Type":"application/json",
+            }, 
+            withCredentials: true,
+          }
+           
         );
           toast.success("Role Selected Successfully!");
           dispatch(setUserRole(res.data.role));
