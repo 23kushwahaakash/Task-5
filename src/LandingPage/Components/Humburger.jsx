@@ -38,6 +38,7 @@ function Hamburger() {
         }
       );
       toast.success("Logged Out Successfully!");
+      localStorage.removeItem("accessToken");
       dispatch(clearAuth());
       navigate("/");
     }

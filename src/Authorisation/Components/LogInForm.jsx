@@ -58,6 +58,7 @@ function LogInForm() {
           dispatch(setUserEmail(res.data.user.email));
           dispatch(setAccessToken(res.data.accesstoken));
           dispatch(setRefreshToken(res.data.refreshtoken));
+          localStorage.setItem("accessToken",res.data.accesstoken);
           navigate("/signup/roleselection");
           toast.success("Login Successful!");
         }
