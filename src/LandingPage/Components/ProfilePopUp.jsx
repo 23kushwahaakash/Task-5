@@ -28,6 +28,7 @@ function ProfilePopUp({ onClose }) {
           }
         }
       );
+      localStorage.removeItem("accessToken");
       toast.success("Logged Out Successfully!");
       dispatch(clearAuth());
       navigate("/");

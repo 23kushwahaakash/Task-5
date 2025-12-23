@@ -21,12 +21,15 @@ import JRHomePage from "./JobRecruiter/HomePage/Pages/JRHomePage"
 import JRProfilePage from "./JobRecruiter/ProfilePage/Pages/JRProfilePage"
 import JRSubmitPage from "./JobRecruiter/SubmitPage/JRSubmitPage"
 import VerifyPage2 from "./Authorisation/Pages/VerifyPage2"
+import ProtectedRoutes from "./ProtectedRoutes"
+
 
 function App() {
   return (
     <div>
       <Toaster position="top-right" reverseOrder={false}/>
       <Routes>
+        {/* Public Routes */}
         <Route path="/" element={<PromotionPage/>}/>
         <Route path="/login" element={<LogInPage/>}></Route>
         <Route path="/signup" element={<SignUpPage/>}></Route>
@@ -35,19 +38,23 @@ function App() {
         <Route path="/forgotpassword/verifyotp" element={<VerifyPage2/>}></Route>
         <Route path="/forgotpassword/verifyotp/createnew" element={<CreateNewPasswordPage/>}></Route>
         <Route path="/forgotpassword/verifyotp/createnew/updated" element={<UpdatedPasswordPage/>}></Route>
-        <Route path="/signup/roleselection" element={<RoleSelectionPage/>}></Route>
-        <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
-        <Route path="/jobseeker/home" element={<HomePage/>}></Route>
-        <Route path="/jobseeker/jobs" element={<JobPage/>}></Route>
-        <Route path="/jobseeker/profile" element={<ProfilePage/>}></Route>
         <Route path="/about" element={<About/>}></Route>
-        <Route path="/jobseeker/profile/submit" element={<SubmitPage/>}></Route>
-        <Route path="/jobseeker/dashboard" element={<DashboardPage/>}></Route>
-        <Route path="/jobrecruiter" element={<LandingPage/>}></Route>
-        <Route path="/jobrecruiter/dashboard" element={<JRDashboardPage/>}></Route>
-        <Route path="/jobrecruiter/home" element={<JRHomePage/>}></Route>
-        <Route path="/jobrecruiter/profile" element={<JRProfilePage/>}></Route>
-        <Route path="/jobrecruiter/profile/submit" element={<JRSubmitPage/>}></Route>
+
+        {/* Protected Routes */}
+        <Route element={<ProtectedRoutes/>}>
+          <Route path="/signup/roleselection" element={<RoleSelectionPage/>}></Route>
+          <Route path="/jobseeker" element={<JSLandingPage/>}></Route>
+          <Route path="/jobseeker/home" element={<HomePage/>}></Route>
+          <Route path="/jobseeker/jobs" element={<JobPage/>}></Route>
+          <Route path="/jobseeker/profile" element={<ProfilePage/>}></Route>
+          <Route path="/jobseeker/profile/submit" element={<SubmitPage/>}></Route>
+          <Route path="/jobseeker/dashboard" element={<DashboardPage/>}></Route>
+          <Route path="/jobrecruiter" element={<LandingPage/>}></Route>
+          <Route path="/jobrecruiter/dashboard" element={<JRDashboardPage/>}></Route>
+          <Route path="/jobrecruiter/home" element={<JRHomePage/>}></Route>
+          <Route path="/jobrecruiter/profile" element={<JRProfilePage/>}></Route>
+          <Route path="/jobrecruiter/profile/submit" element={<JRSubmitPage/>}></Route>
+        </Route>
       </Routes>
     </div>
   )
