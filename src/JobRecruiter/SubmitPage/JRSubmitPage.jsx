@@ -3,7 +3,7 @@ import CrowdLeft from './CrowdLeft.png'
 import CrowdRight from './CrowdRight.png'
 import Flying from "./Flying.png"
 import Check from "./Check.png"
-import Header from '../../LandingPage/Components/Header'
+import Header from '../HomePage/Components/Header'
 import Footer from '../../LandingPage/Components/Footer'
 import { useNavigate,Link } from 'react-router-dom'
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../../LandingPage/Components/Header';
+import Header from '../Components/Header';
 import KeyStats from '../Components/KeyStats';
 import JobPostingsTable from '../Components/JobPostingsTable';
 import CompanyProfile from '../Components/CompanyProfile';
