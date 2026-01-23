@@ -7,16 +7,18 @@ export const handleResumeUpload = async (e) => {
 
     const file = e.target.files[0];
     if (!file)
-        return;
+        return false;
 
     if (file.size > 2*1024*1024){
         toast.error("File must be under 2MB!");
-        return;
+        return false;
     }
 
-    if (!file.type.includes("pdf") && !file.type.includes("word")){
+    if (
+        !file.type.includes("pdf") && 
+        !file.type.includes("word")){
         toast.error("Only PDF or DOC allowed!");
-        return;
+        return false;
     }
 
     const formData = new FormData();
@@ -32,9 +34,9 @@ export const handleResumeUpload = async (e) => {
                 withCredentials:true,
             }
         );
-        toast.success("Resume Uploaded Successfully!");
+        return true;
     }
     catch{
-        toast.error("UPload failed!");
+        return false;
     }
 };
