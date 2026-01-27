@@ -51,8 +51,9 @@ function SubmitPage() {
                   </div>
                   <div className='flex justify-center mb-15'>
                     <button 
-                      className='bg-[#15294B] text-white text-lg p-5 '
-                      onClick={()=>navigate('/login')}>
+                      className='bg-[#15294B] text-white text-lg p-5 cursor-pointer '
+                      
+                      onClick={()=>navigate('/jobseeker/jobs')}>
                       Return To Job Search
                     </button>
                   </div>

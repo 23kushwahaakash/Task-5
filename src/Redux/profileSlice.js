@@ -78,6 +78,6 @@ const profileSlice = createSlice({
     }
 });
 
-export const {setbio, setexperienceinfo, setfirstname, sethighesteduinfo, setid,setlanguagechosen, setlastname, setphonenum, setresume, setskills, setuserid} = profileSlice.actions;
+export const {setbio, setexperienceinfo, setfirstname, sethighesteduinfo, setid,setlanguagechosen, setlastname, setphonenum, setresume, setskills, setuserid, clearProfile} = profileSlice.actions;
 export default profileSlice.reducer;
 export const profileSliceReducer = profileSlice.reducer;
