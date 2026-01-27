@@ -8,9 +8,10 @@ import facebook from "../Images/facebook.png";
 import apple from "../Images/apple.png";
 import axios from "axios";
 import { AUTH_API_ENDPOINT } from "../../APIs/Data";
+import { JOBSEEKER_API_ENDPOINT } from "../../APIs/Data";
 import {useDispatch} from 'react-redux';
 import {setUserId,setUserName,setUserEmail,setAccessToken,setRefreshToken,} from "../../Redux/authSlice";
-
+import {setbio, setexperienceinfo, setfirstname, sethighesteduinfo, setid,setlanguagechosen, setlastname, setphonenum, setresume, setskills, setuserid} from "../../Redux/profileSlice"
 
 function LogInForm() {
   const navigate=useNavigate();
@@ -45,9 +46,11 @@ function LogInForm() {
         return;
     }
 
+    let loginRes;
+
     try {
 
-      const res = await axios.post(
+      loginRes = await axios.post(
         `${AUTH_API_ENDPOINT}/login`,
         input,{
           headers:{
@@ -56,15 +59,14 @@ function LogInForm() {
           withCredentials:true,
           }
         );
-        if(res.data.accesstoken){
-          dispatch(setUserId(res.data.user._id));
-          dispatch(setUserName(res.data.user.fullname));
-          dispatch(setUserEmail(res.data.user.email));
-          dispatch(setAccessToken(res.data.accesstoken));
-          dispatch(setRefreshToken(res.data.refreshtoken));
-          localStorage.setItem("accessToken",res.data.accesstoken);
-          navigate("/signup/roleselection");
-          toast.success("Login Successful!");
+        if(loginRes.data.accesstoken){
+          dispatch(setUserId(loginRes.data.user._id));
+          dispatch(setUserName(loginRes.data.user.fullname));
+          dispatch(setUserEmail(loginRes.data.user.email));
+          dispatch(setAccessToken(loginRes.data.accesstoken));
+          dispatch(setRefreshToken(loginRes.data.refreshtoken));
+          console.log(loginRes);
+          localStorage.setItem("accessToken",loginRes.data.accesstoken);
         }
         
       } catch (error) {
@@ -73,6 +75,34 @@ function LogInForm() {
       }finally{
         setLoading(false);
       }
+
+      try{
+        const profileRes = await axios.get(
+            `${JOBSEEKER_API_ENDPOINT}/profile`,
+            {
+                headers: {
+                    Authorization: `Bearer ${loginRes.data.accesstoken}`,
+                },
+                withCredentials: true,
+            }
+        );
+        console.log(profileRes);
+        dispatch(setbio(profileRes.data.bio));
+        dispatch(setlanguagechosen(profileRes.data.chooselanguage));
+        dispatch(sethighesteduinfo(profileRes.data.education));
+        dispatch(setexperienceinfo(profileRes.data.experience));
+        dispatch(setfirstname(profileRes.data.firstName));
+        dispatch(setid(profileRes.data._id));
+        dispatch(setlastname(profileRes.data.lastName));
+        dispatch(setphonenum(profileRes.data.phonenumber));
+        dispatch(setresume(profileRes.data.resume));
+        dispatch(setskills(profileRes.data.skills));
+        dispatch(setuserid(profileRes.data.userId));
+        navigate("/signup/roleselection");
+        toast.success("Login Successful!");
+    }catch(error){
+        toast.error(error.message);
+    }
     }
 
   return (
