@@ -61,6 +61,20 @@ const profileSlice = createSlice({
         setphonenum:(state, action) => {
             state.phonenum = action.payload;
         },
+
+        clearProfile: (state) => {
+            state.bio = null;
+            state.experienceinfo = null;
+            state.firstname = null;
+            state.highesteduinfo = null;
+            state.id = null;
+            state.languagechosen = null;
+            state.phonenum = null;
+            state.lastname = null;
+            state.resume = null;
+            state.skills = null;
+            state.userid = null;
+        }
     }
 });
 

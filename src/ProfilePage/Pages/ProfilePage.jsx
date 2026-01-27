@@ -121,7 +121,7 @@ function ProfilePage() {
                 {/* Spinner */}
                 <div className="w-12 h-12 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
                 <p className="mt-4 text-blue-600 font-bold text-m">
-                  Submitting your profile...
+                  Saving your profile...
                 </p>
               </div>
             )}
