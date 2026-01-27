@@ -1,10 +1,10 @@
 import { useState } from "react"; 
 import { useNavigate } from "react-router-dom";
-import NextStep from "../Images/logo.svg";
+import NextStep from "../Images/NextStep.svg";
 import Humburger from "./Humburger";
 import SmallerTabs from "./SmallerTabs";
 import ProfilePopUp from "./ProfilePopUp"
-import { Search, Mic, Home, MessageCircle, Bell, User, ChevronDown } from "lucide-react";
+import { Search, Mic, Home, MessageCircle, Briefcase, Bell, User, ChevronDown } from "lucide-react";
 
 function Header() {
   const [isProfileOpen, setIsProfileOpen] = useState(false); 
@@ -40,7 +40,8 @@ function Header() {
 
       <div className=" md:items-center gap-3 hidden md:flex">
          <button onClick={()=>navigate("/jobrecruiter/home")} ><SmallerTabs icon={Home} title="Home" /></button>
-        <button onClick={()=>navigate("")} ><SmallerTabs icon={MessageCircle} title="Chats" badge="7" /></button>
+        <button onClick={()=>navigate("/chats")} ><SmallerTabs icon={MessageCircle} title="Chats" badge="7" /></button>
+        {/* <button onClick={()=>navigate("/jobseeker/jobs")}><SmallerTabs icon={Briefcase} title="Jobs" /></button> */}
       </div>
 
         <div className="flex items-center gap-5">

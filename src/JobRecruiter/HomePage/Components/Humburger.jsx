@@ -1,6 +1,11 @@
 import { useState } from "react";
-import { Home, MessageCircle, Briefcase, X ,User,LayoutDashboard} from "lucide-react";
-import {Link} from 'react-router-dom'
+import { Home, MessageCircle, Briefcase, X ,User,LayoutDashboard, LogOut} from "lucide-react";
+import { Link, useNavigate} from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector} from "react-redux";
+import toast from "react-hot-toast";
+import {clearAuth} from "../../../Redux/authSlice"
+import {AUTH_API_ENDPOINT} from "../../../APIs/Data"
 
 function Hamburger() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +16,35 @@ function Hamburger() {
 
   const closeMenu = () => {
     setIsOpen(false);
+  };
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const accessToken = useSelector(state => state.auth.accessToken);
+  const userEmail = useSelector(state => state.auth.userEmail);
+  const userPass = useSelector(state => state.auth.userPass);
+
+  const handleLogOut = async () => {
+    try{
+      await axios.post(`${AUTH_API_ENDPOINT}/logout`,
+        {
+          email:userEmail,
+          password:userPass
+        },
+        {
+          headers:{
+            Authorization:`Bearer ${accessToken}`
+          }
+        }
+      );
+      toast.success("Logged Out Successfully!");
+      localStorage.removeItem("accessToken");
+      dispatch(clearAuth());
+      navigate("/");
+    }
+    catch{
+      toast.error("Error!")
+    }
   };
 
   return (
@@ -50,7 +84,7 @@ function Hamburger() {
             <span className="text-gray-700 font-medium">Profile</span>
           </Link>
 
-          <Link 
+          <Link  
             to="/jobrecruiter/dashboard" 
             onClick={closeMenu}
             className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
@@ -69,7 +103,7 @@ function Hamburger() {
           </Link>
 
           <Link 
-            to="" 
+            to="/chats" 
             onClick={closeMenu}
             className="flex items-center gap-3 px-4 py-3 hover:bg-gray-100 rounded-lg transition-colors cursor-pointer"
           >
@@ -78,6 +112,12 @@ function Hamburger() {
             <span className="ml-auto bg-blue-600 text-white text-xs px-2 py-1 rounded-full">0</span>
           </Link>
 
+          <button 
+        className="w-full px-4 py-2 text-left hover:bg-red-200 flex items-center gap-3 text-red-600 transition-colors" 
+        onClick={handleLogOut}>
+          <LogOut className="w-5 h-5" />
+          <span>Logout</span>
+        </button>
         </nav>
       </div>
     </>

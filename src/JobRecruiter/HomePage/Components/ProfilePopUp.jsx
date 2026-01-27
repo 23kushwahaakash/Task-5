@@ -1,10 +1,42 @@
 import { useRef, useEffect } from "react";
 import { User, Settings, LogOut, UserCircle, Mail,LayoutDashboard} from "lucide-react";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useDispatch, useSelector} from "react-redux";
+import toast from "react-hot-toast";
+import {clearAuth} from "../../../Redux/authSlice"
+import {AUTH_API_ENDPOINT} from "../../../APIs/Data"
 
 function ProfilePopUp({ onClose }) {
   const popoverRef = useRef(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const accessToken = useSelector(state => state.auth.accessToken);
+  const userEmail = useSelector(state => state.auth.userEmail);
+  const userPass = useSelector(state => state.auth.userPass);
+
+  const handleLogOut = async () => {
+    try{
+      await axios.post(`${AUTH_API_ENDPOINT}/logout`,
+        {
+          email:userEmail,
+          password:userPass
+        },
+        {
+          headers:{
+            Authorization:`Bearer ${accessToken}`
+          }
+        }
+      );
+      localStorage.removeItem("accessToken");
+      toast.success("Logged Out Successfully!");
+      dispatch(clearAuth());
+      navigate("/");
+    }
+    catch{
+      toast.error("Error!")
+    }
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -38,29 +70,35 @@ function ProfilePopUp({ onClose }) {
 
      
       <div className="py-1">
-        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" onClick={()=>navigate("/jobrecruiter/profile")}>
+        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" 
+        onClick={()=>navigate("/jobrecruiter/profile")}>
           <UserCircle className="w-5 h-5" />
           <span>View Profile</span>
         </button>
 
-        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" onClick={()=>navigate("/jobrecruiter/dashboard")}>
+        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" 
+        onClick={()=>navigate("/jobrecruiter/dashboard")}>
           <LayoutDashboard className="w-5 h-5" />
           <span>Dashboard</span>
         </button>
         
-        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" onClick={()=>navigate("")}>
+        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" 
+        onClick={()=>navigate("/chats")}>
           <Mail className="w-5 h-5" />
           <span>Messages</span>
         </button>
 
-        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" onClick={()=>navigate("")}>
+        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-gray-700 transition-colors" 
+        onClick={()=>navigate("")}>
           <Settings className="w-5 h-5" />
           <span>Settings</span>
         </button>
       </div>
 
       <div className="border-t border-gray-200 py-1">
-        <button className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-red-600 transition-colors" onClick={()=>navigate("")}>
+        <button 
+        className="w-full px-4 py-2 text-left hover:bg-gray-100 flex items-center gap-3 text-red-600 transition-colors" 
+        onClick={handleLogOut}>
           <LogOut className="w-5 h-5" />
           <span>Logout</span>
         </button>

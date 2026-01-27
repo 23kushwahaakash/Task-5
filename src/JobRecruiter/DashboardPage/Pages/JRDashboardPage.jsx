@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '../../../LandingPage/Components/Header'; 
+import Header from '../../HomePage/Components/Header'; 
 import Footer from '../../../LandingPage/Components/Footer';
 import Sidebar from '../Components/Sidebar';
 import StatBoxes from '../Components/StatBoxes';
