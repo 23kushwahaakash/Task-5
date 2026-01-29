@@ -1,4 +1,5 @@
 import Square from "../Images/Square.png"
+import { User } from "lucide-react"
 import Header from '../../HomePage/Components/Header'
 import Footer from '../../../LandingPage/Components/Footer'
 import { useNavigate } from "react-router-dom"
@@ -72,12 +73,10 @@ function JRProfilePage() {
         <img src={Square} alt="square" className=" absolute pt-10  -ml-50 md:-ml-120"/>
         <img src={Square} alt="square " className="absolute md:translate-x-280 translate-x-50 pt-30" />  
 
-        <div className="mx-auto w-[70%] md:w-[10%] mt-20 bg-white border border-gray-200 rounded-full shadow-lg flex flex-col items-center justify-center text-center p-6">
-          <img 
-            src={NextStep} 
-            alt="logo" 
-            className="w-20 h-20 mb-4"
-          />
+        <div 
+        className="mx-auto w-[70%] md:w-[7%] mt-20 bg-white border hover:bg-gray-300 cursor-pointer border-gray-200 rounded-full shadow-lg flex flex-col items-center justify-center text-center p-6"
+        onClick={() => navigate("/jobrecruiter/settings")}>
+          <User size={60}/>
         </div>
 
         <div className="w-full px-5 md:px-25 mt-10">
